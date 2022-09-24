@@ -26,7 +26,7 @@ $shortcut.TargetPath = $SourceFilePath
 $shortcut.Save()
 
 # Stop Server Manager openening on login
-Invoke-Command -ScriptBlock { New-ItemProperty -Path HKCU:\Software\Microsoft\ServerManager -Name DoNotOpenServerManagerAtLogon -PropertyType DWORD -Value "0x1" –Force}
+Invoke-Command -ScriptBlock { New-ItemProperty -Path HKCU:\Software\Microsoft\ServerManager -Name DoNotOpenServerManagerAtLogon -PropertyType DWORD -Value "0x1" -Force}
 Get-ScheduledTask -TaskName ServerManager | Disable-ScheduledTask -Verbose
 
 # Install OpenSSH
