@@ -4,18 +4,18 @@ Start-Transcript -path C:\Windows\Temp\customization.log -append
 
 # Install Choco and then required software
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-choco install notepadplusplus -y
-choco install veeam-backup-and-replication-management -y
-choco install veeam-backup-and-replication-console -y
-choco install firefox -y
-choco install mremoteng -y
-choco install winscp -y
-choco install putty -y
-choco install wireshark -y
-choco install winpcap -y
-choco install govc -y
-choco install terraform -y
-choco install duck -y
+choco install notepadplusplus -y --no-progress
+choco install veeam-backup-and-replication-management -y --no-progress
+choco install veeam-backup-and-replication-console -y --no-progress
+choco install firefox -y --no-progress
+choco install mremoteng -y --no-progress
+choco install winscp -y --no-progress
+choco install putty -y --no-progress
+choco install wireshark -y --no-progress
+choco install winpcap -y --no-progress
+choco install govc -y --no-progress
+choco install terraform -y --no-progress
+choco install duck -y --no-progress
 
 # Add a link to PowerShell on the Desktop
 $SourceFilePath = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
