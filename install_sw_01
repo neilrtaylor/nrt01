@@ -20,7 +20,7 @@ choco install vscode -y --no-progress
 choco install treesizefree -y --no-progress
 
 # Update OS
-Install-WindowsUpdate -acceptEula
+Install-WindowsUpdate -AcceptEula
 
 # Stop Server Manager openening on login
 Invoke-Command -ScriptBlock { New-ItemProperty -Path HKCU:\Software\Microsoft\ServerManager -Name DoNotOpenServerManagerAtLogon -PropertyType DWORD -Value "0x1" -Force}
