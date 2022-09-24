@@ -47,3 +47,7 @@ $WScriptObj = New-Object -ComObject ("WScript.Shell")
 $shortcut = $WscriptObj.CreateShortcut($ShortcutPath)
 $shortcut.TargetPath = $SourceFilePath
 $shortcut.Save()
+
+# Pin to the Taskbar
+Install-ChocolateyPinnedTaskBarItem "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+Install-ChocolateyPinnedTaskBarItem "C:\Windows\System32\cmd.exe"
