@@ -18,4 +18,4 @@ choco install terraform -y --no-progress
 choco install duck -y --no-progress
 
 # Update OS
-Install-WindowsUpdate -acceptEula -criteria
+Install-WindowsUpdate -acceptEula
