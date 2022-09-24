@@ -1,0 +1,21 @@
+# Start logging
+$ErrorActionPreference = "Continue"
+Start-Transcript -path C:\Windows\Temp\customization.log -append
+
+# Install required software
+Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar -EnableOpenFileExplorerToQuickAccess -EnableShowRecentFilesInQuickAccess -EnableShowFrequentFoldersInQuickAccess -EnableExpandToOpenFolder -EnableShowRibbon
+choco install notepadplusplus -y --no-progress
+choco install veeam-backup-and-replication-management -y --no-progress
+choco install veeam-backup-and-replication-console -y --no-progress
+choco install firefox -y --no-progress
+choco install mremoteng -y --no-progress
+choco install winscp -y --no-progress
+choco install putty -y --no-progress
+choco install wireshark -y --no-progress
+choco install winpcap -y --no-progress
+choco install govc -y --no-progress
+choco install terraform -y --no-progress
+choco install duck -y --no-progress
+
+# Update OS
+Install-WindowsUpdate -acceptEula -criteria
