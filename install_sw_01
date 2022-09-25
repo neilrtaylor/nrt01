@@ -17,7 +17,6 @@ choco install govc -y --no-progress
 choco install terraform -y --no-progress
 choco install duck -y --no-progress
 choco install vscode -y --no-progress
-choco install treesizefree -y --no-progress
 
 # Update OS
 Install-WindowsUpdate
