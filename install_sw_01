@@ -19,7 +19,7 @@ choco install duck -y --no-progress
 choco install vscode -y --no-progress
 
 # Update OS
-Install-WindowsUpdate
+Install-WindowsUpdate -AcceptEula -Criteria "IsHidden=0 and IsInstalled=0 and Type='Software' and BrowseOnly=0"
 
 # Stop Server Manager openening on login
 Invoke-Command -ScriptBlock { New-ItemProperty -Path HKCU:\Software\Microsoft\ServerManager -Name DoNotOpenServerManagerAtLogon -PropertyType DWORD -Value "0x1" -Force}
