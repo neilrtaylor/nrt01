@@ -1,4 +1,7 @@
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar -EnableOpenFileExplorerToQuickAccess -EnableShowRecentFilesInQuickAccess -EnableShowFrequentFoldersInQuickAccess -EnableExpandToOpenFolder -EnableShowRibbon
+Install-WindowsUpdate -acceptEula
+Install-ChocolateyPinnedTaskBarItem -TargetFilePath "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+Install-ChocolateyPinnedTaskBarItem -TargetFilePath "C:\Windows\System32\cmd.exe"
 choco install notepadplusplus
 choco install veeam-backup-and-replication-management
 choco install veeam-backup-and-replication-console
@@ -12,6 +15,3 @@ choco install govc
 choco install terraform
 choco install duck
 choco install vscode
-Install-WindowsUpdate -AcceptEula -Criteria "IsHidden=0 and IsInstalled=0 and Type='Software' and BrowseOnly=0"
-Install-ChocolateyPinnedTaskBarItem "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
-Install-ChocolateyPinnedTaskBarItem "C:\Windows\System32\cmd.exe"
