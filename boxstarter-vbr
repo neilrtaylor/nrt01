@@ -1,6 +1,6 @@
 Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar -EnableOpenFileExplorerToQuickAccess -EnableShowRecentFilesInQuickAccess -EnableShowFrequentFoldersInQuickAccess -EnableExpandToOpenFolder -EnableShowRibbon
 Install-WindowsUpdate -acceptEula
-$SQLSYSADMINACCOUNTS = '""NT AUTHORITY\SYSTEM"" ""VBR\Administrator""
+$SQLSYSADMINACCOUNTS = '""NT AUTHORITY\SYSTEM"" ""VBR\Administrator""'
 $SQLSVCACCOUNT = "NT Service\MSSQL`$VEEAMSQL2016"
 choco install sql-server-2019 --params="/INSTANCENAME:VEEAMSQL2016 /INSTANCEID:VEEAMSQL2016 /SQLSVCACCOUNT:$SQLSVCACCOUNT /TCPENABLED:1 /SQLSYSADMINACCOUNTS:$SQLSYSADMINACCOUNTS"
 choco install dotnetcore-runtime --version=3.1.16
@@ -11,4 +11,4 @@ choco install sql2014.smo
 choco install ms-reportviewer2015
 choco feature enable -n=exitOnRebootDetected
 choco feature enable -n=useRememberedArgumentsForUpgrades
-choco install veeam-backup-and-replication-server --params '"/sqlServer:(local)\VEEAMSQL2016 /nfsDatastoreLocation:D:\NfsDatastore\"'
+choco install veeam-backup-and-replication-server --params '"/sqlServer:(local)\VEEAMSQL2016 /nfsDatastoreLocation:C:\NfsDatastore\"'
