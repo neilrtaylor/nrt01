@@ -15,6 +15,7 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name LaunchTo -Value 1
 
 # Install software
+choco feature enable -n allowGlobalConfirmation
 $SQLSYSADMINACCOUNTS = '""NT AUTHORITY\SYSTEM"" "".\Administrator""'
 $SQLSVCACCOUNT = "NT Service\MSSQL`$VEEAMSQL2016"
 choco install sql-server-2019 --params="/INSTANCENAME:VEEAMSQL2016 /INSTANCEID:VEEAMSQL2016 /SQLSVCACCOUNT:$SQLSVCACCOUNT /TCPENABLED:1 /SQLSYSADMINACCOUNTS:$SQLSYSADMINACCOUNTS"
