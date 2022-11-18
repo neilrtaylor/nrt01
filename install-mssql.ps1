@@ -15,8 +15,8 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name LaunchTo -Value 1
 
 # Install software
-choco install -y sql-server-2019
-choco install -y sql-server-management-studio
+choco install sql-server-2019
+choco install sql-server-management-studio
 
 # Re-enable and update
 Enable-UAC
