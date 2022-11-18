@@ -15,18 +15,18 @@ Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\
 Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name LaunchTo -Value 1
 
 # Install software
-$SQLSYSADMINACCOUNTS = '""NT AUTHORITY\SYSTEM"" ""VBR\Administrator""'
+$SQLSYSADMINACCOUNTS = '""NT AUTHORITY\SYSTEM"" "".\Administrator""'
 $SQLSVCACCOUNT = "NT Service\MSSQL`$VEEAMSQL2016"
-choco install -y sql-server-2019 --params="/INSTANCENAME:VEEAMSQL2016 /INSTANCEID:VEEAMSQL2016 /SQLSVCACCOUNT:$SQLSVCACCOUNT /TCPENABLED:1 /SQLSYSADMINACCOUNTS:$SQLSYSADMINACCOUNTS"
-choco install -y dotnetcore-runtime --version=3.1.16
-choco install -y dotnetcore-3.1-aspnetruntime
-choco install -y vcredist140
-choco install -y sql2014.clrtypes
-choco install -y sql2014.smo
-choco install -y ms-reportviewer2015
+choco install sql-server-2019 --params="/INSTANCENAME:VEEAMSQL2016 /INSTANCEID:VEEAMSQL2016 /SQLSVCACCOUNT:$SQLSVCACCOUNT /TCPENABLED:1 /SQLSYSADMINACCOUNTS:$SQLSYSADMINACCOUNTS"
+choco install dotnetcore-runtime --version=3.1.16
+choco install dotnetcore-3.1-aspnetruntime
+choco install vcredist140
+choco install sql2014.clrtypes
+choco install sql2014.smo
+choco install ms-reportviewer2015
 choco feature enable -n=exitOnRebootDetected
 choco feature enable -n=useRememberedArgumentsForUpgrades
-choco install veeam-backup-and-replication-server --params '"/sqlServer:(local)\VEEAMSQL2016 /nfsDatastoreLocation:C:\NfsDatastore /licenseFile:C:\????? \"'
+choco install veeam-backup-and-replication-server --params '"/sqlServer:(local)\VEEAMSQL2016 /nfsDatastoreLocation:C:\NfsDatastore /licenseFile:C:\Users\Public\Downloads\Veeam-44instances-backup-entplus-rental.lic \"'
 
 # Re-enable and update
 Enable-UAC
